@@ -45,7 +45,7 @@ module Elmas
     def resource_class
       @resource_class ||= begin
         constant_name = Utils.modulize(type)
-        Object.const_get(constant_name)
+        Object.const_get(constant_name, false)
       rescue NameError
         Elmas.info("Unknown resource encountered, proceed as usual but further resource details might have to be implemented")
         Class.new { include Elmas::Resource }
