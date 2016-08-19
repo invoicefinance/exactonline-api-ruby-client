@@ -15,7 +15,7 @@ module Elmas
       SHARED_SALES_ATTRIBUTES.inject(
         [
           :deliver_to_contact_person, :delivery_date, :delivery_status,
-          :sales_person, :shipping_method, :status, :tax_schedule, :warehouse_ID
+          :salesperson, :shipping_method, :status, :tax_schedule, :warehouse_ID
         ],
         :<<
       )
