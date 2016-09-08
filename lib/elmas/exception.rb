@@ -1,5 +1,5 @@
 module Elmas
-  class BadRequestException < Exception
+  class BadRequestException < StandardError
     def initialize(response, parsed)
       @response = response
       @parsed = parsed
@@ -11,5 +11,5 @@ module Elmas
     end
   end
 
-  class UnauthorizedException < Exception; end
+  class UnauthorizedException < StandardError; end
 end
