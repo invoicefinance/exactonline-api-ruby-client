@@ -18,7 +18,10 @@ module Elmas
 
     def self.camelize(word, uppercase_first_letter = true)
       if uppercase_first_letter
-        word.to_s.gsub(%r{/\/(.?)/}) { "::" + $1.upcase }.gsub(/(^|_)(.)/) { $2.upcase }
+        word.to_s.gsub(%r{/\/(.?)/}) { "::" + $1.upcase }
+                 .gsub(/(^|_)(id|fc|dc|gl|vat|bic|iban|vatfc)($|_)/) { $2.upcase + $3 }
+                 .gsub(/(^|_)(.)/) { $2.upcase }
+
       else
         word[0] + Utils.camelize(word)[1..-1]
       end
@@ -40,9 +43,5 @@ module Elmas
       Hash[hash.map { |k, v| [Utils.normalize_hash_key(k), v] }] if hash
     end
 
-    def self.parse_key(key)
-      "VATCode" if key.casecmp "vat_code"
-      Utils.camelize(key)
-    end
   end
 end
