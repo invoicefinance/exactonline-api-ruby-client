@@ -6,10 +6,6 @@ module Elmas
       "crm/BankAccounts"
     end
 
-    def self.primary_key
-      :id
-    end
-
     # No clue if this is correct
     def mandatory_attributes
       [:account, :bank_account]
