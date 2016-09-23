@@ -1,0 +1,7 @@
+- Include all resources from the Exact Online Documentation page
+- Include required attributes
+- Include primary keys. Ensure we don't always use 'id' as primary key
+- Include all available attributes somewhere on the resource so we can match back capital letter
+  without having to rely on some strange regex
+
+- Find out if we can easily introduce concurrency

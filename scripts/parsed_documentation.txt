@@ -1,0 +1,312 @@
+-----
+https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMBankAccounts
+Schema for resource BankAccounts:
+
+t.uuid "id"
+t.uuid "account"
+t.text "account_name"
+t.uuid "bank"
+t.text "bank_account"
+t.text "bank_account_holder_name"
+t.text "bank_description"
+t.text "bank_name"
+t.text "bic_code"
+t.datetime "created"
+t.uuid "creator"
+t.text "creator_full_name"
+t.text "description"
+t.integer "division"
+t.text "format"
+t.text "iban"
+t.boolean "main"
+t.datetime "modified"
+t.uuid "modifier"
+t.text "modifier_full_name"
+t.uuid "payment_service_account"
+t.text "type"
+t.text "type_description"
+
+
+-----
+https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialTransactionBankEntryLines
+Schema for resource BankEntryLines:
+
+t.uuid "id"
+t.uuid "account"
+t.text "account_code"
+t.text "account_name"
+t.decimal "amount_dc", {:precision=>10, :scale=>5}
+t.decimal "amount_fc", {:precision=>10, :scale=>5}
+t.decimal "amount_vatfc", {:precision=>10, :scale=>5}
+t.uuid "asset"
+t.text "asset_code"
+t.text "asset_description"
+t.text "cost_center"
+t.text "cost_center_description"
+t.text "cost_unit"
+t.text "cost_unit_description"
+t.datetime "created"
+t.uuid "creator"
+t.text "creator_full_name"
+t.datetime "date"
+t.text "description"
+t.integer "division"
+t.uuid "document"
+t.integer "document_number"
+t.text "document_subject"
+t.uuid "entry_id"
+t.integer "entry_number"
+t.decimal "exchange_rate", {:precision=>10, :scale=>5}
+t.uuid "gl_account"
+t.text "gl_account_code"
+t.text "gl_account_description"
+t.integer "line_number"
+t.datetime "modified"
+t.uuid "modifier"
+t.text "modifier_full_name"
+t.text "notes"
+t.uuid "offset_id"
+t.integer "our_ref"
+t.uuid "project"
+t.text "project_code"
+t.text "project_description"
+t.decimal "quantity", {:precision=>10, :scale=>5}
+t.text "vat_code"
+t.text "vat_code_description"
+t.decimal "vat_percentage", {:precision=>10, :scale=>5}
+t.text "vat_type"
+
+
+-----
+https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialTransactionCashEntryLines
+Schema for resource CashEntryLines:
+
+t.uuid "id"
+t.uuid "account"
+t.text "account_code"
+t.text "account_name"
+t.decimal "amount_dc", {:precision=>10, :scale=>5}
+t.decimal "amount_fc", {:precision=>10, :scale=>5}
+t.decimal "amount_vatfc", {:precision=>10, :scale=>5}
+t.uuid "asset"
+t.text "asset_code"
+t.text "asset_description"
+t.text "cost_center"
+t.text "cost_center_description"
+t.text "cost_unit"
+t.text "cost_unit_description"
+t.datetime "created"
+t.uuid "creator"
+t.text "creator_full_name"
+t.datetime "date"
+t.text "description"
+t.integer "division"
+t.uuid "document"
+t.integer "document_number"
+t.text "document_subject"
+t.uuid "entry_id"
+t.integer "entry_number"
+t.decimal "exchange_rate", {:precision=>10, :scale=>5}
+t.uuid "gl_account"
+t.text "gl_account_code"
+t.text "gl_account_description"
+t.integer "line_number"
+t.datetime "modified"
+t.uuid "modifier"
+t.text "modifier_full_name"
+t.text "notes"
+t.uuid "offset_id"
+t.integer "our_ref"
+t.uuid "project"
+t.text "project_code"
+t.text "project_description"
+t.decimal "quantity", {:precision=>10, :scale=>5}
+t.text "vat_code"
+t.text "vat_code_description"
+t.decimal "vat_percentage", {:precision=>10, :scale=>5}
+t.text "vat_type"
+
+
+-----
+https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchaseEntryPurchaseEntries
+Schema for resource PurchaseEntries:
+
+t.uuid "entry_id"
+t.decimal "amount_dc", {:precision=>10, :scale=>5}
+t.decimal "amount_fc", {:precision=>10, :scale=>5}
+t.integer "batch_number"
+t.datetime "created"
+t.uuid "creator"
+t.text "creator_full_name"
+t.text "currency"
+t.text "description"
+t.integer "division"
+t.uuid "document"
+t.integer "document_number"
+t.text "document_subject"
+t.datetime "due_date"
+t.datetime "entry_date"
+t.integer "entry_number"
+t.text "external_link_description"
+t.text "external_link_reference"
+t.integer "invoice_number"
+t.text "journal"
+t.text "journal_description"
+t.datetime "modified"
+t.uuid "modifier"
+t.text "modifier_full_name"
+t.integer "order_number"
+t.text "payment_condition"
+t.text "payment_condition_description"
+t.text "payment_reference"
+t.integer "process_number"
+Type PurchaseEntryLines not found for column PurchaseEntryLines / purchase_entry_lines
+t.decimal "rate", {:precision=>10, :scale=>5}
+t.integer "reporting_period"
+t.integer "reporting_year"
+t.boolean "reversal"
+t.integer "status"
+t.text "status_description"
+t.uuid "supplier"
+t.text "supplier_name"
+t.integer "type"
+t.text "type_description"
+t.decimal "vat_amount_dc", {:precision=>10, :scale=>5}
+t.decimal "vat_amount_fc", {:precision=>10, :scale=>5}
+t.text "your_ref"
+
+
+-----
+https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesInvoiceSalesInvoices
+Schema for resource SalesInvoices:
+
+t.uuid "invoice_id"
+t.decimal "amount_dc", {:precision=>10, :scale=>5}
+t.decimal "amount_fc", {:precision=>10, :scale=>5}
+t.datetime "created"
+t.uuid "creator"
+t.text "creator_full_name"
+t.text "currency"
+t.uuid "deliver_to"
+t.uuid "deliver_to_address"
+t.uuid "deliver_to_contact_person"
+t.text "deliver_to_contact_person_full_name"
+t.text "deliver_to_name"
+t.text "description"
+t.integer "division"
+t.uuid "document"
+t.integer "document_number"
+t.text "document_subject"
+t.datetime "due_date"
+t.decimal "extra_duty_amount_fc", {:precision=>10, :scale=>5}
+t.datetime "invoice_date"
+t.integer "invoice_number"
+t.uuid "invoice_to"
+t.uuid "invoice_to_contact_person"
+t.text "invoice_to_contact_person_full_name"
+t.text "invoice_to_name"
+t.boolean "is_extra_duty"
+t.text "journal"
+t.text "journal_description"
+t.datetime "modified"
+t.uuid "modifier"
+t.text "modifier_full_name"
+t.datetime "order_date"
+t.uuid "ordered_by"
+t.uuid "ordered_by_contact_person"
+t.text "ordered_by_contact_person_full_name"
+t.text "ordered_by_name"
+t.integer "order_number"
+t.text "payment_condition"
+t.text "payment_condition_description"
+t.text "payment_reference"
+t.text "remarks"
+Type SalesInvoiceLines not found for column SalesInvoiceLines / sales_invoice_lines
+t.uuid "salesperson"
+t.text "salesperson_full_name"
+t.integer "starter_sales_invoice_status"
+t.text "starter_sales_invoice_status_description"
+t.integer "status"
+t.text "status_description"
+t.uuid "tax_schedule"
+t.text "tax_schedule_code"
+t.text "tax_schedule_description"
+t.integer "type"
+t.text "type_description"
+t.decimal "vat_amount_dc", {:precision=>10, :scale=>5}
+t.decimal "vat_amount_fc", {:precision=>10, :scale=>5}
+t.text "your_ref"
+
+
+-----
+https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialTransactionTransactionLines
+Schema for resource TransactionLines:
+
+t.uuid "id"
+t.uuid "account"
+t.text "account_code"
+t.text "account_name"
+t.decimal "amount_dc", {:precision=>10, :scale=>5}
+t.decimal "amount_fc", {:precision=>10, :scale=>5}
+t.decimal "amount_vat_base_fc", {:precision=>10, :scale=>5}
+t.decimal "amount_vatfc", {:precision=>10, :scale=>5}
+t.uuid "asset"
+t.text "asset_code"
+t.text "asset_description"
+t.text "cost_center"
+t.text "cost_center_description"
+t.text "cost_unit"
+t.text "cost_unit_description"
+t.datetime "created"
+t.uuid "creator"
+t.text "creator_full_name"
+t.text "currency"
+t.datetime "date"
+t.text "description"
+t.integer "division"
+t.uuid "document"
+t.integer "document_number"
+t.text "document_subject"
+t.datetime "due_date"
+t.uuid "entry_id"
+t.integer "entry_number"
+t.decimal "exchange_rate", {:precision=>10, :scale=>5}
+t.decimal "extra_duty_amount_fc", {:precision=>10, :scale=>5}
+t.decimal "extra_duty_percentage", {:precision=>10, :scale=>5}
+t.integer "financial_period"
+t.integer "financial_year"
+t.uuid "gl_account"
+t.text "gl_account_code"
+t.text "gl_account_description"
+t.integer "invoice_number"
+t.uuid "item"
+t.text "item_code"
+t.text "item_description"
+t.text "journal_code"
+t.text "journal_description"
+t.integer "line_number"
+t.integer "line_type"
+t.datetime "modified"
+t.uuid "modifier"
+t.text "modifier_full_name"
+t.text "notes"
+t.uuid "offset_id"
+t.integer "order_number"
+t.decimal "payment_discount_amount", {:precision=>10, :scale=>5}
+t.text "payment_reference"
+t.uuid "project"
+t.text "project_code"
+t.text "project_description"
+t.decimal "quantity", {:precision=>10, :scale=>5}
+t.text "serial_number"
+t.uuid "subscription"
+t.text "subscription_description"
+t.text "tracking_number"
+t.text "tracking_number_description"
+t.text "vat_code"
+t.text "vat_code_description"
+t.decimal "vat_percentage", {:precision=>10, :scale=>5}
+t.text "vat_type"
+t.text "your_ref"
+
+
