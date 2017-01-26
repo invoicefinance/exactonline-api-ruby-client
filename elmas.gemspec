@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "faraday", [">= 0.8", "< 0.10"]
   spec.add_dependency "mechanize", "2.6.0"
   spec.add_dependency "activesupport"
-  spec.add_dependency "activeresource", ">= 5.0.0"
+  spec.add_dependency "activeresource"
 
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake", "~> 10.0"
