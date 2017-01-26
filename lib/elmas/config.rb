@@ -1,7 +1,9 @@
 require "faraday"
+require "active_resource/threadsafe_attributes"
 
 module Elmas
   module Config
+    include ThreadsafeAttributes
     # An array of valid keys in the options hash
     VALID_OPTIONS_KEYS = [
       :access_token,
@@ -58,7 +60,7 @@ module Elmas
     VALID_FORMATS = [:json].freeze
 
     # @private
-    attr_accessor *VALID_OPTIONS_KEYS
+    threadsafe_attribute(*VALID_OPTIONS_KEYS)
 
     # When this module is extended, set all configuration options to their default values
     def self.extended(base)
