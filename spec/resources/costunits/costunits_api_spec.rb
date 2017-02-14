@@ -75,7 +75,7 @@ describe Elmas::Costunit do
     end
 
     it "should apply one select" do
-      expect(Elmas).to receive(:get).with("hrm/Costunits?$select=Code,Id")
+      expect(Elmas).to receive(:get).with("hrm/Costunits?$select=Code,ID")
       resource.find_all(select: [:code, :id])
     end
   end

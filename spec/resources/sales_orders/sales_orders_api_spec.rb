@@ -76,7 +76,7 @@ describe Elmas::SalesOrder do
     end
 
     it "should apply one select" do
-      expect(Elmas).to receive(:get).with("salesorder/SalesOrders?$select=OrderNumber,Id")
+      expect(Elmas).to receive(:get).with("salesorder/SalesOrders?$select=OrderNumber,ID")
       resource.find_all(select: [:order_number, :id])
     end
   end

@@ -75,7 +75,7 @@ describe Elmas::VatCode do
     end
 
     it "should apply one select" do
-      expect(Elmas).to receive(:get).with("vat/VATCodes?$select=Code,Id")
+      expect(Elmas).to receive(:get).with("vat/VATCodes?$select=Code,ID")
       resource.find_all(select: [:code, :id])
     end
   end

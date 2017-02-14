@@ -65,7 +65,7 @@ describe Elmas::TransactionLine do
     end
 
     it "should apply one select" do
-      expect(Elmas).to receive(:get).with("financialtransaction/TransactionLines?$select=AssetCode,Id")
+      expect(Elmas).to receive(:get).with("financialtransaction/TransactionLines?$select=AssetCode,ID")
       resource.find_all(select: [:asset_code, :id])
     end
   end

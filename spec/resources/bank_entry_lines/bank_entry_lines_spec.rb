@@ -76,7 +76,7 @@ describe Elmas::BankEntryLine do
     end
 
     it "should apply one select" do
-      expect(Elmas).to receive(:get).with("financialtransaction/BankEntryLines?$select=OurRef,Id")
+      expect(Elmas).to receive(:get).with("financialtransaction/BankEntryLines?$select=OurRef,ID")
       resource.find_all(select: [:our_ref, :id])
     end
   end
