@@ -21,7 +21,7 @@ module Elmas
     def self.camelize(word, uppercase_first_letter = true)
       if uppercase_first_letter
         word.to_s.gsub(%r{/\/(.?)/}) { "::" + $1.upcase }
-                 .gsub(/(^|_)(id|fc|dc|gl|vat|bic|hid|iban|vatfc|brin|rsin|glap|glar)($|_)/) { $2.upcase + $3 }
+                 .gsub(/(^|_)(id|fc|dc|gl|vat|bic|iban|vatfc|brin|rsin|glap|glar)($|_)/) { $2.upcase + $3 }
                  .gsub(/(^|_)(.)/) { $2.upcase }
 
       else
