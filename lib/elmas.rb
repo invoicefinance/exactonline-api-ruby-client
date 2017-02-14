@@ -51,6 +51,7 @@ require "elmas/resources/vat_code"
 require "elmas/resources/general_journal_entry"
 require "elmas/resources/general_journal_entry_line"
 require "elmas/resources/payment_condition"
+require "elmas/resources/system_division"
 
 module Elmas
   extend Config
