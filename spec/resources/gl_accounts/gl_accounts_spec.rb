@@ -76,7 +76,7 @@ describe Elmas::GLAccount do
     end
 
     it "should apply one select" do
-      expect(Elmas).to receive(:get).with("financial/GLAccounts?$select=Code,Id")
+      expect(Elmas).to receive(:get).with("financial/GLAccounts?$select=Code,ID")
       resource.find_all(select: [:code, :id])
     end
   end

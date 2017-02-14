@@ -69,7 +69,7 @@ describe Elmas::DocumentAttachment do
     end
 
     it "should apply one select" do
-      expect(Elmas).to receive(:get).with("documents/DocumentAttachments?$select=FileName,Id")
+      expect(Elmas).to receive(:get).with("documents/DocumentAttachments?$select=FileName,ID")
       resource.find_all(select: [:file_name, :id])
     end
   end

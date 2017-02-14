@@ -75,7 +75,7 @@ describe Elmas::Mailbox do
     end
 
     it "should apply one select" do
-      expect(Elmas).to receive(:get).with("mailbox/Mailboxes?$select=Account,Id")
+      expect(Elmas).to receive(:get).with("mailbox/Mailboxes?$select=Account,ID")
       resource.find_all(select: [:account, :id])
     end
   end

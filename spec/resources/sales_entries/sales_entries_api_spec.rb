@@ -76,7 +76,7 @@ describe Elmas::SalesEntry do
     end
 
     it "should apply one select" do
-      expect(Elmas).to receive(:get).with("salesentry/SalesEntries?$select=BatchNumber,Id")
+      expect(Elmas).to receive(:get).with("salesentry/SalesEntries?$select=BatchNumber,ID")
       resource.find_all(select: [:batch_number, :id])
     end
   end

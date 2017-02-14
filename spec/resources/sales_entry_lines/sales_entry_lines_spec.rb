@@ -76,7 +76,7 @@ describe Elmas::SalesEntryLine do
     end
 
     it "should apply one select" do
-      expect(Elmas).to receive(:get).with("salesentry/SalesEntryLines?$select=SerialNumber,Id")
+      expect(Elmas).to receive(:get).with("salesentry/SalesEntryLines?$select=SerialNumber,ID")
       resource.find_all(select: [:serial_number, :id])
     end
   end
