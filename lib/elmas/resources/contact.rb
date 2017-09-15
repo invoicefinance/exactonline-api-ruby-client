@@ -13,8 +13,8 @@ module Elmas
 
     def other_attributes
       [
-        :account_name, :birt_date, :birth_name, :birth_name_prefix, :birth_place,
-        :business_email, :business_fax, :business_mobile, :business_phone, :business_phone_extention,
+        :account_name, :birth_date, :birth_name, :birth_name_prefix, :birth_place,
+        :business_email, :business_fax, :business_mobile, :business_phone, :business_phone_extension,
         :email, :end_date, :first_name, :gender, :HID, :initials, :is_mailing_excluded,
         :job_title_description, :language, :marketing_notes, :middle_name,
         :mobile, :nationality, :notes, :person, :phone, :picture, :picture_name,
