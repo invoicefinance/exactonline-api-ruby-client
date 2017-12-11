@@ -54,6 +54,7 @@ require "elmas/resources/general_journal_entry"
 require "elmas/resources/general_journal_entry_line"
 require "elmas/resources/payment_condition"
 require "elmas/resources/division"
+require "elmas/resources/bulk/transaction_line"
 
 module Elmas
   extend Config
