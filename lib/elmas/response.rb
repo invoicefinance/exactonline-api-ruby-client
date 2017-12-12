@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
 require File.expand_path("../parser", __FILE__)
 require File.expand_path("../utils", __FILE__)
 
 module Elmas
   class Response
-    attr_accessor :status_code, :body, :response
+    attr_accessor :status_code, :response
+    attr_writer :body
 
     def initialize(response)
       @response = response
@@ -63,7 +66,7 @@ module Elmas
 
     def raise_and_log_error
       log_error
-      fail BadRequestException.new(@response, parsed)
+      raise BadRequestException.new(@response, parsed)
     end
   end
 end

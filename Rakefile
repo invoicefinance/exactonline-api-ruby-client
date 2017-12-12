@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "bundler/gem_tasks"
 
 task :rubocop do
@@ -8,4 +10,4 @@ task :rspec do
   sh "rspec"
 end
 
-task default: [:rubocop, :rspec]
+task default: %i[rubocop rspec]

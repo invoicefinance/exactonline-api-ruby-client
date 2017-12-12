@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Elmas
   class Costcenter
     include Elmas::Resource
@@ -7,11 +9,11 @@ module Elmas
     end
 
     def mandatory_attributes
-      [:code, :description]
+      %i[code description]
     end
 
     def other_attributes
-      [:active]
+      %i[active]
     end
   end
 end

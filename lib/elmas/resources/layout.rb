@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 module Elmas
   class Layout
     include Elmas::Resource
 
     def valid_actions
-      [:get]
+      %i[get]
     end
 
     def base_path
@@ -15,9 +17,9 @@ module Elmas
     end
 
     def other_attributes
-      [
-        :id, :created, :creator, :creator_full_name, :division,
-        :modified, :modifier, :modifier_full_name, :subject, :type
+      %i[
+        id created creator creator_full_name division
+        modified modifier modifier_full_name subject type
       ]
     end
   end

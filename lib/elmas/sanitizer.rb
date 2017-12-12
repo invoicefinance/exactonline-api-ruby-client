@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "active_support"
 require "active_support/time"
 require "active_support/core_ext/time/zones"
@@ -20,17 +22,17 @@ module Elmas
       # rubocop:disable Metrics/PerceivedComplexity
       def sanitize_relationship(value)
         if value.is_a?(Elmas::Resource)
-          return value.id # Turn relation into ID
+          value.id # Turn relation into ID
         elsif value.is_a?(Array)
-          return sanitize_has_many(value)
+          sanitize_has_many(value)
         elsif value.is_a?(Time) || value.is_a?(Date) || value.is_a?(DateTime)
-          return sanitize_date_time(value)
+          sanitize_date_time(value)
         elsif value.is_a?(String) && value.match(/(Date\()/)
           number = value.scan(/\d+/).first.to_i / 1000.0
           Time.zone = ActiveSupport::TimeZone.new("Europe/Amsterdam")
-          return sanitize_date_time(Time.zone.at(number))
+          sanitize_date_time(Time.zone.at(number))
         else
-          return value
+          value
         end
       end
       # rubocop:enable Metrics/CyclomaticComplexity

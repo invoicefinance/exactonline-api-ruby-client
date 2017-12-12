@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Elmas
   class SalesEntryLine < Elmas::BaseEntryLine
     # A sales entry line belongs to a sales entry

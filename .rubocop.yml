@@ -1,6 +1,15 @@
 Documentation:
   Enabled: false
 
+Lint/UriEscapeUnescape:
+  Enabled: false
+
+NAming/FileName:
+  Enabled: false
+
+Style/MethodMissing:
+  Enabled: false
+
 StringLiterals:
   EnforcedStyle: double_quotes
 

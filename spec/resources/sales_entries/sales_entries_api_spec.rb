@@ -24,7 +24,7 @@ describe Elmas::SalesEntry do
 
   #customer journal salesentrylines
   it "is valid with mandatory attributes" do
-    sales_entry = Elmas::SalesEntry.new(contact: "82378ks", journal: "my-awesome-journal", sales_entry_lines: ["b","a"])
+    sales_entry = Elmas::SalesEntry.new(customer: "82378ks", journal: "my-awesome-journal", sales_entry_lines: ["b","a"])
     expect(sales_entry.valid?).to eq(true)
   end
 

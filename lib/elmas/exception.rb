@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Elmas
   class BadRequestException < StandardError
     def initialize(response, parsed)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Elmas
   class SalesEntry
     # A sales entry needs multiple sales entry lines
@@ -9,16 +11,12 @@ module Elmas
     end
 
     def mandatory_attributes
-      [:journal, :contact, :sales_entry_lines]
+      %i[journal customer sales_entry_lines]
     end
 
     def other_attributes
-      [
-        :batch_number, :currency, :customer, :document, :due_date, :entry_date,
-        :entry_number, :invoice_number, :order_number, :payment_condition,
-        :payment_reference, :process_number, :rate, :reporting_period,
-        :reporting_year, :reversal, :VAT_amount_FC, :your_ref, :description
-      ]
+      %i[batch_number currency document due_date entry_date entry_number invoice_number order_number payment_condition payment_reference
+         process_number rate reporting_period reporting_year reversal VAT_amount_FC your_ref description]
     end
   end
 end

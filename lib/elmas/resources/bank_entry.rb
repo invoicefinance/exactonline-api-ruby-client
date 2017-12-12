@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Elmas
   class BankEntry
     include Elmas::Resource
@@ -7,13 +9,13 @@ module Elmas
     end
 
     def mandatory_attributes
-      [:journal_code, :bank_entry_lines]
+      %i[journal_code bank_entry_lines]
     end
 
     def other_attributes
-      [
-        :currency, :bank_statement_document, :closing_balance_FC, :entry_number,
-        :financial_period, :financial_year, :opening_balance_FC
+      %i[
+        currency bank_statement_document closing_balance_FC entry_number
+        financial_period financial_year opening_balance_FC
       ]
     end
   end

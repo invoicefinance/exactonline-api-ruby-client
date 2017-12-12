@@ -33,7 +33,14 @@ describe Elmas::BankEntry do
     expect(sales_entry.valid?).to eq(false)
   end
 
-  let(:resource) { resource = Elmas::BankEntry.new(id: "12abcdef-1234-1234-1234-123456abcdef", financial_year: "1223") }
+  let(:resource) {
+    Elmas::BankEntry.new(
+      id: "12abcdef-1234-1234-1234-123456abcdef",
+      financial_year: "1223",
+      created: { ge: Date.new(2016, 6, 1) },
+      modified: { lt: DateTime.new(2016, 12, 31, 13, 37) }
+    )
+  }
 
   context "Applying filters" do
     it "should apply ID filter for find" do
@@ -49,6 +56,11 @@ describe Elmas::BankEntry do
     it "should apply given filters for find_by" do
       expect(Elmas).to receive(:get).with("financialtransaction/BankEntries?$filter=FinancialYear+eq+'1223'&$filter=ID+eq+guid'12abcdef-1234-1234-1234-123456abcdef'")
       resource.find_by(filters: [:financial_year, :id])
+    end
+
+    it "should apply date and time filters for find_by" do
+      expect(Elmas).to receive(:get).with("financialtransaction/BankEntries?$filter=Created+ge+datetime'2016-06-01T00:00:00Z'&$filter=Modified+lt+datetime'2016-12-31T13:37:00Z'")
+      resource.find_by(filters: [:created, :modified])
     end
   end
 

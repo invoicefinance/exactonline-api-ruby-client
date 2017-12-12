@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Elmas
   class GeneralJournalEntry
     include Elmas::Resource
@@ -7,11 +9,11 @@ module Elmas
     end
 
     def mandatory_attributes
-      [:journal_code, :general_journal_entry_lines]
+      %i[journal_code general_journal_entry_lines]
     end
 
     def other_attributes
-      [:financial_period, :financial_year, :currency, :exchange_rate, :reversal]
+      %i[financial_period financial_year currency exchange_rate reversal]
     end
   end
 end

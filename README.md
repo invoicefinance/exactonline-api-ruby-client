@@ -1,10 +1,31 @@
 [![Build Status](https://travis-ci.org/exactonline/exactonline-api-ruby-client.svg?branch=master)](https://travis-ci.org/exactonline/exactonline-api-ruby-client)
 [![Code Climate](https://codeclimate.com/github/exactonline/exactonline-api-ruby-client/badges/gpa.svg)](https://codeclimate.com/github/exactonline/exactonline-api-ruby-client)
 [![Gem Version](https://badge.fury.io/rb/elmas.svg)](http://badge.fury.io/rb/elmas)
+[![Join the chat at https://gitter.im/exactonline/exactonline-api-ruby-client](https://badges.gitter.im/exactonline/exactonline-api-ruby-client.svg)](https://gitter.im/exactonline/exactonline-api-ruby-client?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Elmas
 
-Elmas means diamond, but in this case it's an API wrapper for [Exact Online](https://developers.exactonline.com/).
+Elmas means diamond, but in this case it's an API wrapper for [Exact Online](https://developers.exactonline.com/). This gem was created by [@Marthyn](https://github.com/marthyn), [Hoppinger](http://www.hoppinger.com) and a few people:
+
+# DISCLAIMER
+
+Please read the Authorization part of this readme before opening an issue about it and realize it's a functionality that is only intented for debugging purposes really, or to allow App to App communication, but it's really better to CREATE YOUR OWN authentication/refresh/authorization logic for your customers through the normal OAUTH path. The code in the Oauth.rb file could break any time Exact changes their login form for example. 
+
+### Contributers
+
+* [Commuun](https://github.com/commuun)
+* [dunyakirkali](https://github.com/dunyakirkali)
+* [Korstiaan](https://github.com/korstiaan)
+* [confiks](https://github.com/confiks)
+* [Menno-de-brie](https://github.com/Menno-de-brie)
+* [Dahie](https://github.com/Dahie)
+* [mipmip](https://github.com/mipmip)
+* [Bramjetten](https://github.com/Bramjetten)
+* [LaurensN](https://github.com/LaurensN)
+* [jdlombardozzi](https://github.com/jdlombardozzi)
+* [michielverkoijen](https://github.com/michielverkoijen)
+
+Thanks for helping! If you want to contribute read through this readme how to!
 
 ## Installation
 
@@ -28,12 +49,13 @@ You have to have an Exact Online account and an app setup to connect with.
 
 You have to set a few variables to make a connection possible. I'd suggest using environment variables set with [dotenv](https://github.com/bkeepers/dotenv) for that.
 
-Then configure Elmas like this
+Then configure Elmas like this (take these values from your app that you setup at apps.exactonline.com)
 
 ```ruby
 Elmas.configure do |config|
   config.client_id = ENV['CLIENT_ID']
   config.client_secret = ENV['CLIENT_SECRET']
+  config.redirect_uri = ENV['REDIRECT_URI']
 end
 ```
 
@@ -59,11 +81,8 @@ So combining all of this results in
 Elmas.configure do |config|
   config.client_id = ENV['CLIENT_ID']
   config.client_secret = ENV['CLIENT_SECRET']
-end
-Elmas.configure do |config|
+  config.redirect_uri = ENV['REDIRECT_URI']
   config.access_token = Elmas.authorize(ENV['EXACT_USER_NAME'], ENV['EXACT_PASSWORD']).access_token
-end
-Elmas.configure do |config|
   config.division = Elmas.authorize_division
 end
 ```
@@ -80,6 +99,18 @@ unless Elmas.authorized?
     config.access_token = Elmas.authorize(ENV['EXACT_USER_NAME'], ENV['EXACT_PASSWORD']).access_token
   end
 end
+```
+
+### Logger
+
+The default logger is STDOUT. A custom logger can be be configured.
+```ruby
+  dir = File.dirname("./tmp/errors.log")
+  FileUtils.mkdir_p(dir) unless File.directory?(dir)
+
+  Elmas.configure do |config|
+    config.logger = ::Logger.new("./tmp/errors.log", "daily")
+  end
 ```
 
 ## Accessing the API
@@ -256,4 +287,3 @@ When you're editing code it's advised you run guard, which watches file changes 
 
 This gem was created by [Hoppinger](http://www.hoppinger.com)
 
-[![forthebadge](http://forthebadge.com/images/badges/built-with-ruby.svg)](http://www.hoppinger.com)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Elmas
   module Utils
     def self.demodulize(class_name_in_module)

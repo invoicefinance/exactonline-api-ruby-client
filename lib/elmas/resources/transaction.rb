@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 module Elmas
   class Transaction
     include Elmas::Resource
 
     def valid_actions
-      [:get]
+      %i[get]
     end
 
     def base_path
@@ -15,7 +17,7 @@ module Elmas
     end
 
     def other_attributes
-      [:description]
+      %i[description]
     end
   end
 end

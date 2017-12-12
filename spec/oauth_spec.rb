@@ -7,6 +7,7 @@ describe Elmas::OAuth do
       client_id = "24509072-f819-40ff-b888-4cd545985392"
       Elmas.configure do |config|
         config.client_id = client_id
+        config.base_url = "https://start.exactonline.nl"
       end
       stream = File.read("spec/fixtures/exact_login.html")
       login_params = { client_id: client_id, redirect_uri: "https://www.getpostman.com/oauth2/callback", response_type: "code" }

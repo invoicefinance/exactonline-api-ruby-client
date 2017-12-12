@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Elmas
   class DocumentAttachment
     include Elmas::Resource
@@ -7,7 +9,7 @@ module Elmas
     end
 
     def mandatory_attributes
-      [:attachment, :document, :file_name]
+      %i[attachment document file_name]
     end
 
     def other_attributes

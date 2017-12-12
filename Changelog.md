@@ -1,7 +1,43 @@
+## 2.5.0
+- Fix some stuff in the Oauth logic (thanks @michielverkoijen)
+- Add division class (thanks @michielverkoijen)
+- Remove mandatory attribute from SalesInvoice (thanks @michielverkoijen)
+- Add configurable logger (thanks @jdlombardozzi)
+- Add refresh token logic so you do not always have to reauthorize (thanks @jdlombardozzi)
+- Fix all rubocop issues (thanks @jdlombardozzi)
+
+## 2.4.2
+- Add thread safety
+
+## 2.4.1
+
+- Update gem versions of mechanize and faraday
+
+## 2.4.0
+
+- Add security measures for constantizing Exact Resources thanks to @confiks
+- Add possibility to filter on Date or Time. Added test for BankEntry. thanks to @confiks
+- Custom exception shouldn't inherit Exception. Use StandardError instead. thanks to @confiks
+- Let go of unecessary dev dependency versions
+
+## 2.3.3
+
+- Add bank accounts resource
+
+## 2.3.2
+
+- Fix ruby_dep dependency
+- Add SaleItemPrices Resource
+- Add some missing attributes, thanks @Dahie and @Korstiaan
+- Make it easier to setup more diverse exact requests
+These changes make the requests to exact slightly more flexible to configure.
+This is useful to reuse the Request class also connecting to the XML-API of exact. Also thanks to @Dahie (f7d3e6d7481544ef9148f52175bc1a1d31a16e8e)
+
 ## 2.3.1
 
 - Fix typo in bank entry
 - Add GL_account to invoice line
+
 
 ## 2.3.0
 

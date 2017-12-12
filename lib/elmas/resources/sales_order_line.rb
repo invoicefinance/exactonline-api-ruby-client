@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Elmas
   class SalesOrderLine
     include Elmas::Resource
@@ -8,15 +10,12 @@ module Elmas
     end
 
     def mandatory_attributes
-      [:item, :order_ID]
+      %i[item order_ID]
     end
 
     def other_attributes
       SHARED_LINE_ATTRIBUTES.inject(
-        [
-          :amount_FC, :delivery_date, :item_version, :order_number, :unit_price,
-          :use_drop_shipment, :VAT_amount
-        ],
+        %i[amount_FC delivery_date item_version order_number unit_price use_drop_shipment VAT_amount],
         :<<
       )
     end

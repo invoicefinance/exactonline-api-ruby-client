@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require File.expand_path("../utils", __FILE__)
 require File.expand_path("../exception", __FILE__)
 require File.expand_path("../uri", __FILE__)
@@ -24,8 +26,8 @@ module Elmas
     def find_all(options = {})
       @order_by = options[:order_by]
       @select = options[:select]
-      response = get(uri([:order, :select]))
-      response.results if response
+      response = get(uri(%i[order select]))
+      response&.results
     end
 
     # Pass filters in an array, for example 'filters: [:id, :name]'
@@ -33,14 +35,14 @@ module Elmas
       @filters = options[:filters]
       @order_by = options[:order_by]
       @select = options[:select]
-      response = get(uri([:order, :select, :filters]))
-      response.results if response
+      response = get(uri(%i[order select filters]))
+      response&.results
     end
 
     def find
       return nil unless id?
       response = get(uri([:id]))
-      response.results.first if response
+      response&.results&.first
     end
 
     # Normally use the url method (which applies the filters) but sometimes you only want to use the base path or other paths

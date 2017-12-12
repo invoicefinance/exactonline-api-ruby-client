@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Elmas
   class Parser
     attr_accessor :parsed_json

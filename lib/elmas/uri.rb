@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Elmas
   module Resource
     module UriMethods
@@ -46,12 +48,17 @@ module Elmas
 
       # Convert a value to something usable in an ExactOnline request
       def sanitize_value(value)
-        if value.is_a?(String)
+        case value
+        when String
           if value =~ /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/
             "guid'#{value}'"
           else
             "'#{value}'"
           end
+
+        when Date, Time
+          "datetime'#{value.strftime('%FT%TZ')}'"
+
         else
           value
         end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Elmas
   class ResultSet
     attr_reader :records
@@ -45,10 +47,10 @@ module Elmas
     def resource_class
       @resource_class ||= begin
         constant_name = type.classify
-        raise NameError if constant_name !~ /\A[a-zA-Z0-9]+\z/
+        raise NameError unless constant_name =~ /\A[a-zA-Z0-9]+\z/
 
         klass = Elmas.const_get(constant_name, false)
-        raise NameError if !klass.included_modules.include?(Elmas::Resource)
+        raise NameError unless klass.included_modules.include?(Elmas::Resource)
 
         klass
       rescue NameError

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Elmas
   # We can use the AgingReceivablesList to change the status of SalesInvoices from
   # Open to 'Verwerkt' while at the same time sending a PDF of the invoice to the
@@ -9,7 +11,7 @@ module Elmas
     include Elmas::Resource
 
     def valid_actions
-      [:get]
+      %i[get]
     end
 
     def base_path
@@ -20,12 +22,12 @@ module Elmas
       []
     end
 
-    # https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesInvoiceAgingReceivablesLists
+    # https//start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesInvoiceAgingReceivablesLists
     def other_attributes
-      [
-        :account_id, :account_code, :account_name, :age_group1, :age_group1_amount, :age_group1_description,
-        :age_group2, :age_group2_amount, :age_group2_description, :age_group3, :age_group3_amount, :age_group3_description,
-        :age_group4, :age_group4_amount, :age_group4_description, :currency_code, :total_amount
+      %i[
+        account_id account_code account_name age_group1 age_group1_amount age_group1_description
+        age_group2 age_group2_amount age_group2_description age_group3 age_group3_amount age_group3_description
+        age_group4 age_group4_amount age_group4_description currency_code total_amount
       ]
     end
   end

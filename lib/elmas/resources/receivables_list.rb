@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Elmas
   # We can use the AgingReceivablesList to change the status of SalesInvoices from
   # Open to 'Verwerkt' while at the same time sending a PDF of the invoice to the
@@ -22,11 +24,8 @@ module Elmas
 
     # https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialReceivablesList
     def other_attributes
-      [
-        :description, :hid, :account_code, :account_id, :account_name, :amount, :amount_in_transit,
-        :currency_code, :description, :due_date, :entry_number, :id, :invoice_date, :invoice_number,
-        :journal_code, :journal_description, :your_ref
-      ]
+      %i[description hid account_code account_id account_name amount amount_in_transit currency_code description due_date entry_number id
+         invoice_date invoice_number journal_code journal_description your_ref]
     end
   end
 end
